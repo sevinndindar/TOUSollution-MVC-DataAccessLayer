@@ -1,0 +1,49 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "Home Page";
+}
+@{Layout = null;}
+<style>
+    th,td {
+        border: 1px solid #dddddd;
+        padding:8px;
+    }
+    table {
+        font-family: arial, sans-serif;
+        width: 33%;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    tr:nth-child(2n) {
+        background-color: #dddddd;
+    }
+</style>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div style="text-align:center">
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Telefon</th>
+        </tr>
+        @{
+            foreach (Person kisi in Model)
+            {
+                <tr>
+                    <td>@kisi.Id</td>
+                    <td>@kisi.Name</td>
+                    <td>@kisi.Surname</td>
+                    <td>@kisi.Phone</td>
+                </tr>
+            }
+        }
+
+
+
+    </table>
+</div>
